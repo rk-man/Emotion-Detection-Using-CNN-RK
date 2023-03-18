@@ -1,0 +1,4 @@
+node_mopdules/
+*.env
+env/
+data/
