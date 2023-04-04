@@ -3,7 +3,7 @@ import numpy as np
 from keras.models import model_from_json
 
 
-def detectEmotion(filename):
+def detectEmotion(filename=None):
     emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
     # load json and create model
@@ -22,7 +22,11 @@ def detectEmotion(filename):
     # pass here your video path
     # you may download one from here : https://www.pexels.com/video/three-girls-laughing-5273028/
     # cap = cv2.VideoCapture("C:\\JustDoIt\\ML\\Sample_videos\\emotion_sample6.mp4")
-    cap = cv2.VideoCapture(f"F:\\AI and ML\\Projects\\Emotion_detection_with_CNN\\backend\\static\\{filename}")
+
+    if(filename):
+        cap = cv2.VideoCapture(f"F:\\AI and ML\\Projects\\Emotion_detection_with_CNN\\backend\\static\\{filename}")
+    else:
+        cap = cv2.VideoCapture(0)
 
 
 

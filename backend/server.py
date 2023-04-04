@@ -14,6 +14,8 @@ def members():
         filename = file.filename
         file.save(os.path.join(app.config["FILE_STORAGE"], filename))
         detectEmotion(filename)
+    else:
+        detectEmotion()
     return {"members":["member1","member2"]}
 
 
